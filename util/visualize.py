@@ -54,7 +54,7 @@ def show_heatmaps(cfg, img, scmap, pose, cmap="jet"):
     all_joints_names = cfg.all_joints_names
     subplot_width = 3
     subplot_height = math.ceil((len(all_joints) + 1) / subplot_width)
-    f, axarr = plt.subplots(subplot_height, subplot_width)
+    f, axarr = plt.subplots(int(subplot_height), int(subplot_width))
     for pidx, part in enumerate(all_joints):
         plot_j = (pidx + 1) // subplot_width
         plot_i = (pidx + 1) % subplot_width
