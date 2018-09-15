@@ -32,7 +32,8 @@ cfg = load_config("demo/pose_cfg.yaml")
 # Load and setup CNN part detector
 sess, inputs, outputs = predict.setup_pose_prediction(cfg)
 
-iteration_list = [15, 1, 10]
+iteration_list = [1]
+# iteration_list = [15, 1, 10]
 for iteration in iteration_list:
 	start = time.time()
 
@@ -50,6 +51,7 @@ for iteration in iteration_list:
 		# print(outputs["locref"])
 		# print(outputs["part_prob"])
 		# print(outputs_np["locref"].shape)
+		# print(outputs_np["part_prob"].shape)
 		# print(outputs_np["locref"][0, 63, 35, :])
 
 		scmap, locref, _ = predict.extract_cnn_output(outputs_np, cfg)
